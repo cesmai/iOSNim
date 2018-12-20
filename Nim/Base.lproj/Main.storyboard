@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Nim" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nim game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDw-50-WS4">
+                                <rect key="frame" x="126" y="40" width="123" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EsS-Ek-Doc">
+                                <rect key="frame" x="169" y="191" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JHC-5a-RUb">
+                                <rect key="frame" x="147" y="262" width="75" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Play &gt;"/>
+                                <connections>
+                                    <segue destination="7ZS-p5-O1F" kind="show" id="YAD-Hk-lm8"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Player 1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nD2-wW-cg1">
+                                <rect key="frame" x="126" y="129" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Player 2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1kG-cH-31p">
+                                <rect key="frame" x="125" y="186" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="ui_player1TextField" destination="nD2-wW-cg1" id="PKl-Ap-WVZ"/>
+                        <outlet property="ui_player2TextField" destination="1kG-cH-31p" id="LOp-HI-fWx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="182" y="133"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="hPd-yB-N3U">
+            <objects>
+                <viewController id="7ZS-p5-O1F" customClass="GameViewController" customModule="Nim" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DRo-Ie-dZb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;nameOfPlayer&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KP7-0t-1nb">
+                                <rect key="frame" x="101" y="75" width="129" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3S-7k-UqK">
+                                <rect key="frame" x="30" y="75" width="61" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remaining matches : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSk-SC-bDj">
+                                <rect key="frame" x="30" y="126" width="164" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;nbRemainingMatches&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xa4-aP-X6p">
+                                <rect key="frame" x="204" y="126" width="187" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Evv-NV-4nl">
+                                <rect key="frame" x="30" y="177" width="49" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;nbMatchesWillTakeLabel&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OhB-Jy-fr6">
+                                <rect key="frame" x="89" y="177" width="211" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T5a-cI-ZuT">
+                                <rect key="frame" x="148.5" y="284" width="78" height="30"/>
+                                <state key="normal" title="Next player"/>
+                                <connections>
+                                    <action selector="nextButtonTouched" destination="7ZS-p5-O1F" eventType="touchUpInside" id="HLl-FO-orp"/>
+                                </connections>
+                            </button>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="6AG-Vi-GjU">
+                                <rect key="frame" x="89" y="207.5" width="94" height="29"/>
+                                <connections>
+                                    <action selector="nbMatchesValueChanged:" destination="7ZS-p5-O1F" eventType="valueChanged" id="Gz2-88-Mb4"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P8H-PK-VkK">
+                                <rect key="frame" x="187.5" y="404" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xa4-aP-X6p" firstAttribute="firstBaseline" secondItem="hSk-SC-bDj" secondAttribute="firstBaseline" id="0No-oN-eww"/>
+                            <constraint firstItem="P8H-PK-VkK" firstAttribute="centerX" secondItem="DRo-Ie-dZb" secondAttribute="centerX" id="4TQ-cG-Esx"/>
+                            <constraint firstItem="KP7-0t-1nb" firstAttribute="firstBaseline" secondItem="b3S-7k-UqK" secondAttribute="firstBaseline" id="5wx-Pt-VsP"/>
+                            <constraint firstItem="hSk-SC-bDj" firstAttribute="leading" secondItem="R5c-ks-Hy4" secondAttribute="leading" constant="30" id="Bd7-Tk-8fI"/>
+                            <constraint firstItem="KP7-0t-1nb" firstAttribute="leading" secondItem="b3S-7k-UqK" secondAttribute="trailing" constant="10" id="Dvu-vI-KCo"/>
+                            <constraint firstItem="6AG-Vi-GjU" firstAttribute="top" secondItem="OhB-Jy-fr6" secondAttribute="bottom" constant="10" id="Exh-6X-HXQ"/>
+                            <constraint firstItem="Evv-NV-4nl" firstAttribute="top" secondItem="hSk-SC-bDj" secondAttribute="bottom" constant="30" id="Gnd-CG-xos"/>
+                            <constraint firstItem="hSk-SC-bDj" firstAttribute="top" secondItem="b3S-7k-UqK" secondAttribute="bottom" constant="30" id="LaP-Zc-3IN"/>
+                            <constraint firstItem="b3S-7k-UqK" firstAttribute="leading" secondItem="R5c-ks-Hy4" secondAttribute="leading" constant="30" id="MXb-1e-77F"/>
+                            <constraint firstItem="OhB-Jy-fr6" firstAttribute="leading" secondItem="Evv-NV-4nl" secondAttribute="trailing" constant="10" id="Nu7-SM-6K7"/>
+                            <constraint firstItem="T5a-cI-ZuT" firstAttribute="top" secondItem="6AG-Vi-GjU" secondAttribute="bottom" constant="47.5" id="P8z-Z9-30U"/>
+                            <constraint firstItem="Evv-NV-4nl" firstAttribute="leading" secondItem="R5c-ks-Hy4" secondAttribute="leading" constant="30" id="Ui7-1W-ZKA"/>
+                            <constraint firstItem="OhB-Jy-fr6" firstAttribute="firstBaseline" secondItem="Evv-NV-4nl" secondAttribute="firstBaseline" id="Yfq-2a-Qok"/>
+                            <constraint firstItem="T5a-cI-ZuT" firstAttribute="centerX" secondItem="DRo-Ie-dZb" secondAttribute="centerX" id="aKn-iD-ADq"/>
+                            <constraint firstItem="P8H-PK-VkK" firstAttribute="top" secondItem="T5a-cI-ZuT" secondAttribute="bottom" constant="90" id="fSO-j0-h4o"/>
+                            <constraint firstItem="6AG-Vi-GjU" firstAttribute="leading" secondItem="OhB-Jy-fr6" secondAttribute="leading" id="lyx-mW-pxQ"/>
+                            <constraint firstItem="xa4-aP-X6p" firstAttribute="leading" secondItem="hSk-SC-bDj" secondAttribute="trailing" constant="10" id="nDr-9V-Veb"/>
+                            <constraint firstItem="b3S-7k-UqK" firstAttribute="top" secondItem="R5c-ks-Hy4" secondAttribute="top" constant="55" id="tCG-rU-kWl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="R5c-ks-Hy4"/>
+                    </view>
+                    <connections>
+                        <outlet property="ui_matchesRemainingLabel" destination="xa4-aP-X6p" id="Vvl-va-Go3"/>
+                        <outlet property="ui_nbMatchesWillTakeLabel" destination="OhB-Jy-fr6" id="0Qo-AR-IoA"/>
+                        <outlet property="ui_nbMatchesWillTakeStepper" destination="6AG-Vi-GjU" id="MnZ-dY-ez5"/>
+                        <outlet property="ui_playerNameLabel" destination="KP7-0t-1nb" id="f0N-YB-6h3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tUc-nl-I03" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="852" y="133"/>
+        </scene>
+    </scenes>
+</document>
