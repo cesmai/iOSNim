@@ -17,6 +17,8 @@ class GameViewController: UIViewController {
     @IBOutlet weak var ui_congratsWinnerLabel: UILabel!
     @IBOutlet weak var ui_restartButton: UIButton!
     @IBOutlet weak var ui_nextPlayerButton: UIButton!
+    @IBOutlet var ui_machesButtonList: [UIButton]!
+    @IBOutlet weak var ui_matchesButtonStackView: UIStackView!
     
     static let START_MATCHES_TO_PICK_COUNT: Int = 1
     var game:Game?
@@ -42,6 +44,7 @@ class GameViewController: UIViewController {
         ui_congratsWinnerLabel.isHidden = true
         ui_nextPlayerButton.isHidden = false
         ui_restartButton.isHidden = true
+        ui_matchesButtonStackView.isHidden = false
     }
     
     
@@ -52,6 +55,13 @@ class GameViewController: UIViewController {
             ui_matchesRemainingLabel.text = String(safeGame.getMatchesCount())
             ui_nbMatchesWillTakeLabel.text = String(GameViewController.START_MATCHES_TO_PICK_COUNT)
             ui_nbMatchesWillTakeStepper.value = Double(GameViewController.START_MATCHES_TO_PICK_COUNT)
+            
+            if safeGame.getMatchesCount() < 3 {
+                ui_machesButtonList[2].isHidden = true
+            }
+            if safeGame.getMatchesCount() < 2 {
+                ui_machesButtonList[1].isHidden = true
+            }
         }
     }
     
@@ -62,11 +72,24 @@ class GameViewController: UIViewController {
     
     @IBAction func nextButtonTouched() {
         
+        let matchesSelectedByPlayerCount = Int(ui_nbMatchesWillTakeStepper.value)
+        playerWillPlay(matchesPicked: matchesSelectedByPlayerCount)
+    }
+    
+    
+    func playerWillPlay(matchesPicked: Int) {
+        
         if let safeGame: Game = game {
-            let matchesSelectedByPlayerCount = ui_nbMatchesWillTakeStepper.value
-            let pickSucceed:Bool = safeGame.pickMatches(removedMatchesCount: Int(matchesSelectedByPlayerCount))
+            let pickSucceed:Bool = safeGame.pickMatches(removedMatchesCount: matchesPicked)
             
             if (safeGame.isGameOver()) {
+                
+                // Hide all matches button
+//                for matchButton in ui_machesButtonList {
+//                    matchButton.isHidden = true
+//                }
+                ui_matchesButtonStackView.isHidden = true
+                
                 // Display a ending message
                 ui_congratsWinnerLabel.text = "Congratulations \(safeGame.getPreviousPlayer()) : you WON !!!"
                 ui_congratsWinnerLabel.isHidden = false
@@ -82,6 +105,14 @@ class GameViewController: UIViewController {
         }
     }
     
+    
+    @IBAction func matchesButtonTouched(_ sender: UIButton) {
+        
+        let matchesSelectedByPlayerCount = sender.tag
+        playerWillPlay(matchesPicked: matchesSelectedByPlayerCount)
+    }
+    
+    
     @IBAction func restartButtonTouched() {
         
         if let safeGame: Game = game {
@@ -89,6 +120,7 @@ class GameViewController: UIViewController {
             startGameUI()
         }
     }
+    
     
     func changePlayer() {
         

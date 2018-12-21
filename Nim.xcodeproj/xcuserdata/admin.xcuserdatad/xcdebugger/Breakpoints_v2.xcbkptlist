@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Nim/UI/ViewControllers/GameViewController.swift"
-            timestampString = "567080555.936799"
+            timestampString = "567088006.769473"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
             landmarkName = "changePlayer()"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Nim/UI/ViewControllers/GameViewController.swift"
-            timestampString = "567080555.937652"
+            timestampString = "567088006.7707241"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
             landmarkName = "restartButtonTouched()"
             landmarkType = "7">
          </BreakpointContent>
