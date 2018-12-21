@@ -26,7 +26,7 @@ class Game {
     
     func restartGame() {
         matchesCount = Game.START_MATCHES_COUNT
-        currentPlayer = player1 //TODO regarder pourquoi il garde player2
+        currentPlayer = player1
         previousPlayer = ""
     }
     
@@ -42,13 +42,18 @@ class Game {
         return matchesCount
     }
     
-    func pickMatches(removedMatchesCount:Int) {
+    func pickMatches(removedMatchesCount:Int) -> Bool {
+        var res:Bool = false
+        
         if removedMatchesCount >= 1
             && removedMatchesCount <= 3
             && removedMatchesCount <= matchesCount
         {
             matchesCount = matchesCount - removedMatchesCount
+            res = true
         }
+        
+        return res
     }
     
     func changePlayer() {

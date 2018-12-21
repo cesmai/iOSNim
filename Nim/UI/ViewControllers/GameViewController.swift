@@ -24,7 +24,9 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         startGameUI()
     }
     
@@ -49,7 +51,6 @@ class GameViewController: UIViewController {
             ui_playerNameLabel.text = safeGame.getCurrentPlayer()
             ui_matchesRemainingLabel.text = String(safeGame.getMatchesCount())
             ui_nbMatchesWillTakeLabel.text = String(GameViewController.START_MATCHES_TO_PICK_COUNT)
-            //TODO faire un setter car s'il ne reste plus que 2 allumettes, il ne faut pas lui proposer d'en prendre 3 ...
             ui_nbMatchesWillTakeStepper.value = Double(GameViewController.START_MATCHES_TO_PICK_COUNT)
         }
     }
@@ -63,7 +64,7 @@ class GameViewController: UIViewController {
         
         if let safeGame: Game = game {
             let matchesSelectedByPlayerCount = ui_nbMatchesWillTakeStepper.value
-            safeGame.pickMatches(removedMatchesCount: Int(matchesSelectedByPlayerCount))
+            let pickSucceed:Bool = safeGame.pickMatches(removedMatchesCount: Int(matchesSelectedByPlayerCount))
             
             if (safeGame.isGameOver()) {
                 // Display a ending message
@@ -74,7 +75,9 @@ class GameViewController: UIViewController {
                 ui_restartButton.isHidden = false
                 ui_nextPlayerButton.isHidden = true
             } else {
-                changePlayer()
+                if pickSucceed {
+                    changePlayer()
+                }
             }
         }
     }
