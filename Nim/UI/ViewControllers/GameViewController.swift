@@ -14,6 +14,9 @@ class GameViewController: UIViewController {
     @IBOutlet weak var ui_matchesRemainingLabel: UILabel!
     @IBOutlet weak var ui_nbMatchesWillTakeLabel: UILabel!
     @IBOutlet weak var ui_nbMatchesWillTakeStepper: UIStepper!
+    @IBOutlet weak var ui_congratsWinnerLabel: UILabel!
+    @IBOutlet weak var ui_restartButton: UIButton!
+    @IBOutlet weak var ui_nextPlayerButton: UIButton!
     
     static let START_MATCHES_TO_PICK_COUNT: Int = 1
     var game:Game?
@@ -29,6 +32,9 @@ class GameViewController: UIViewController {
     
     func initGameUI() {
         ui_matchesRemainingLabel.text = String(Game.START_MATCHES_COUNT)
+        ui_congratsWinnerLabel.isHidden = true
+        ui_nextPlayerButton.isHidden = false
+        ui_restartButton.isHidden = true
     }
     
     
@@ -38,6 +44,7 @@ class GameViewController: UIViewController {
             ui_playerNameLabel.text = safeGame.getCurrentPlayer()
             ui_matchesRemainingLabel.text = String(safeGame.getMatchesCount())
             ui_nbMatchesWillTakeLabel.text = String(GameViewController.START_MATCHES_TO_PICK_COUNT)
+            //TODO faire un setter car s'il ne reste plus que 2 allumettes, il ne faut pas lui proposer d'en prendre 3 ...
             ui_nbMatchesWillTakeStepper.value = Double(GameViewController.START_MATCHES_TO_PICK_COUNT)
         }
     }
@@ -52,12 +59,30 @@ class GameViewController: UIViewController {
         if let safeGame: Game = game {
             let matchesSelectedByPlayerCount = ui_nbMatchesWillTakeStepper.value
             safeGame.pickMatches(removedMatchesCount: Int(matchesSelectedByPlayerCount))
-            viewChangePlayer()
+            
+            if (safeGame.isGameOver()) {
+                // Display a ending message
+                ui_congratsWinnerLabel.text = "Congratulations \(safeGame.getPreviousPlayer()) : you WON !!!"
+                ui_congratsWinnerLabel.isHidden = false
+                
+                // Replace Next button by Restart one
+                ui_restartButton.isHidden = false
+                ui_nextPlayerButton.isHidden = true
+            } else {
+                changePlayer()
+            }
         }
     }
     
+    @IBAction func restartButtonTouched() {
+        
+        if let safeGame: Game = game {
+            safeGame.restartGame()
+            initGameUI()
+        }
+    }
     
-    func viewChangePlayer() {
+    func changePlayer() {
         
         if let safeGame: Game = game {
             safeGame.changePlayer()

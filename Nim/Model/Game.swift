@@ -10,28 +10,32 @@ import Foundation
 
 class Game {
     
-    static let START_MATCHES_COUNT: Int = 20
-    static var gameCount: Int = 0
+    static let START_MATCHES_COUNT: Int = 4
     
     var matchesCount = Game.START_MATCHES_COUNT
     let player1:String
     let player2:String
     var currentPlayer:String
+    var previousPlayer:String = ""
     
     init(name1:String, name2:String) {
         player1 = name1
         player2 = name2
         currentPlayer = player1
-        Game.gameCount += 1
     }
     
-    func startGame() {
+    func restartGame() {
         matchesCount = Game.START_MATCHES_COUNT
-        currentPlayer = player1
+        currentPlayer = player1 //TODO regarder pourquoi il garde player2
+        previousPlayer = ""
     }
     
     func getCurrentPlayer() -> String {
         return currentPlayer
+    }
+    
+    func getPreviousPlayer() -> String {
+        return previousPlayer
     }
     
     func getMatchesCount() -> Int {
@@ -48,6 +52,7 @@ class Game {
     }
     
     func changePlayer() {
+        previousPlayer = currentPlayer
         if (currentPlayer == player1) {
             currentPlayer = player2
         } else {
