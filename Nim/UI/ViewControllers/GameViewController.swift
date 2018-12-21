@@ -25,12 +25,17 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        startGameUI()
+    }
+    
+    func startGameUI() {
         initGameUI()
         updateGameUI()
     }
     
     
     func initGameUI() {
+        
         ui_matchesRemainingLabel.text = String(Game.START_MATCHES_COUNT)
         ui_congratsWinnerLabel.isHidden = true
         ui_nextPlayerButton.isHidden = false
@@ -78,7 +83,7 @@ class GameViewController: UIViewController {
         
         if let safeGame: Game = game {
             safeGame.restartGame()
-            initGameUI()
+            startGameUI()
         }
     }
     
