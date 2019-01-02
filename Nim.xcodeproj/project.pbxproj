@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84D02A3021CD21A200D48EC6 /* GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D02A2F21CD21A200D48EC6 /* GameTests.swift */; };
 		84F9B52D21CA82F50013756C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9B52C21CA82F50013756C /* AppDelegate.swift */; };
 		84F9B52F21CA82F50013756C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9B52E21CA82F50013756C /* HomeViewController.swift */; };
 		84F9B53221CA82F50013756C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F9B53021CA82F50013756C /* Main.storyboard */; };
@@ -17,7 +18,20 @@
 		84F9B54421CB98870013756C /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9B54321CB98870013756C /* Game.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		84D02A3221CD21A200D48EC6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84F9B52121CA82F50013756C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84F9B52821CA82F50013756C;
+			remoteInfo = Nim;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		84D02A2D21CD21A200D48EC6 /* NimTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NimTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84D02A2F21CD21A200D48EC6 /* GameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTests.swift; sourceTree = "<group>"; };
+		84D02A3121CD21A200D48EC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84F9B52921CA82F50013756C /* Nim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F9B52C21CA82F50013756C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84F9B52E21CA82F50013756C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -31,6 +45,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		84D02A2A21CD21A200D48EC6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		84F9B52621CA82F50013756C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -41,10 +62,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84D02A2E21CD21A200D48EC6 /* NimTests */ = {
+			isa = PBXGroup;
+			children = (
+				84D02A2F21CD21A200D48EC6 /* GameTests.swift */,
+				84D02A3121CD21A200D48EC6 /* Info.plist */,
+			);
+			path = NimTests;
+			sourceTree = "<group>";
+		};
 		84F9B52021CA82F50013756C = {
 			isa = PBXGroup;
 			children = (
 				84F9B52B21CA82F50013756C /* Nim */,
+				84D02A2E21CD21A200D48EC6 /* NimTests */,
 				84F9B52A21CA82F50013756C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				84F9B52921CA82F50013756C /* Nim.app */,
+				84D02A2D21CD21A200D48EC6 /* NimTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -100,6 +132,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		84D02A2C21CD21A200D48EC6 /* NimTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84D02A3421CD21A200D48EC6 /* Build configuration list for PBXNativeTarget "NimTests" */;
+			buildPhases = (
+				84D02A2921CD21A200D48EC6 /* Sources */,
+				84D02A2A21CD21A200D48EC6 /* Frameworks */,
+				84D02A2B21CD21A200D48EC6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84D02A3321CD21A200D48EC6 /* PBXTargetDependency */,
+			);
+			name = NimTests;
+			productName = NimTests;
+			productReference = 84D02A2D21CD21A200D48EC6 /* NimTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		84F9B52821CA82F50013756C /* Nim */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84F9B53B21CA82F60013756C /* Build configuration list for PBXNativeTarget "Nim" */;
@@ -127,6 +177,10 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Cecile M";
 				TargetAttributes = {
+					84D02A2C21CD21A200D48EC6 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 84F9B52821CA82F50013756C;
+					};
 					84F9B52821CA82F50013756C = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -146,11 +200,19 @@
 			projectRoot = "";
 			targets = (
 				84F9B52821CA82F50013756C /* Nim */,
+				84D02A2C21CD21A200D48EC6 /* NimTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		84D02A2B21CD21A200D48EC6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		84F9B52721CA82F50013756C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -164,6 +226,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		84D02A2921CD21A200D48EC6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84D02A3021CD21A200D48EC6 /* GameTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		84F9B52521CA82F50013756C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -177,6 +247,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84D02A3321CD21A200D48EC6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84F9B52821CA82F50013756C /* Nim */;
+			targetProxy = 84D02A3221CD21A200D48EC6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		84F9B53021CA82F50013756C /* Main.storyboard */ = {
@@ -198,6 +276,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		84D02A3521CD21A200D48EC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NimTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fr.cecilem.NimTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nim.app/Nim";
+			};
+			name = Debug;
+		};
+		84D02A3621CD21A200D48EC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NimTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fr.cecilem.NimTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nim.app/Nim";
+			};
+			name = Release;
+		};
 		84F9B53921CA82F60013756C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -351,6 +467,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		84D02A3421CD21A200D48EC6 /* Build configuration list for PBXNativeTarget "NimTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84D02A3521CD21A200D48EC6 /* Debug */,
+				84D02A3621CD21A200D48EC6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		84F9B52421CA82F50013756C /* Build configuration list for PBXProject "Nim" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
